@@ -76,7 +76,7 @@ def stop(update: Update, context: CallbackContext):
 
 # تشغيل البوت وFlask
 def main():
-    TOKEN = "8176064666:AAGoWzUav0sJdZE-3UPZQVdmDbUE3G5BVas"  # ← ضع التوكن الخاص بك هنا
+    TOKEN = "7774881594:AAGrjc0-ikU-3OMaivzZoYTwajV0jcu8P0Q"  # ← ضع التوكن الخاص بك هنا
     updater = Updater(TOKEN, use_context=True)
     dp = updater.dispatcher
 
