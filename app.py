@@ -27,7 +27,7 @@ def load_urls():
 
 # إرسال ~100 طلب/ثانية لمدة دقيقة لرابط محدد
 def attack_url_for_one_minute(url, chat_id, context: CallbackContext, index):
-    end_time = time.time() + 30
+    end_time = time.time() + 45
     context.bot.send_message(chat_id, f"🚀 بدأ الإرسال على الرابط رقم {index+1}: {url}")
     while is_running and time.time() < end_time:
         try:
